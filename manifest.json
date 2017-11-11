@@ -1,0 +1,48 @@
+{
+    "manifest_version": 2,
+    "name": "__MSG_extensionName__",
+    "description": "__MSG_extensionDescription__",
+    "default_locale": "en",
+    "applications": {
+        "gecko": {
+            "strict_min_version": "57.0a1"
+        }
+    },
+    "author": "freaktechnik",
+    "version": "1.0.0",
+    "icons": {
+        "48": "images/tracking-protection.svg#enabled",
+        "64": "images/tracking-protection.svg#enabled"
+    },
+    "browser_action": {
+        "default_icon": "images/tracking-protection.svg#disabled",
+        "default_title": "__MSG_tooltipEnable__",
+        "theme_icons": [
+            {
+                "light": "images/tracking-protection-dark.svg#disabled",
+                "dark": "images/tracking-protection.svg#disabled",
+                "size": 19
+            }
+        ]
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "permissions": [
+        "privacy",
+        "storage"
+    ],
+    "options_ui": {
+        "page": "options.html",
+        "browser_style": true
+    },
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "default": "Alt+P"
+            }
+        }
+    }
+}

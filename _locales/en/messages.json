@@ -1,0 +1,18 @@
+{
+    "extensionName": {
+        "message": "Tracking Protection Toggle",
+        "description": "Extension title"
+    },
+    "extensionDescription": {
+        "message": "Toggle Tracking Protection from a Toolbar Button.",
+        "description": "Description of the extension"
+    },
+    "tooltipEnable": {
+        "message": "Enable Tracking Protection",
+        "description": "Tooltip when tracking protection is disabled"
+    },
+    "tooltipDisable": {
+        "message": "Disable Tracking Protection",
+        "description": "Tooltip when tracking protection is enabled"
+    }
+}
