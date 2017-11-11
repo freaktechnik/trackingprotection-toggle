@@ -21,6 +21,11 @@ const IMAGES = [
     DISABLED = 1,
     ALWAYS_ENABLED = "always",
     setState = async (enabled) => {
+        if(enabled === undefined) {
+            const { value: mode } = await browser.privacy.websites.trackingProtectionMode.get({});
+            enabled = mode !== ALWAYS_ENABLED;
+        }
+
         const index = enabled ? ENABLED : DISABLED;
 
         const {
@@ -48,12 +53,7 @@ const IMAGES = [
         });
     };
 
-let state = false;
-
-browser.browserAction.onClicked.addListener(() => {
-    state = !state;
-    setState(state);
-});
+browser.browserAction.onClicked.addListener(setState);
 
 browser.runtime.onStartup.addListener(() => {
     browser.privacy.websites.trackingProtectionMode.get({}).then(({ value: mode }) => {
