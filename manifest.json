@@ -9,7 +9,7 @@
         }
     },
     "author": "freaktechnik",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "icons": {
         "48": "images/tracking-protection.svg#enabled",
         "64": "images/tracking-protection.svg#enabled"

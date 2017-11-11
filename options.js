@@ -25,13 +25,11 @@ window.addEventListener("load", () => {
     for(const setting of SETTINGS) {
         const el = document.getElementById(setting);
         getSettings[setting] = el.value;
-        console.log(el.value);
         addListener(el);
     }
     browser.storage.local.get(getSettings).then((settings) => {
         for(const setting in settings) {
             const el = document.getElementById(setting);
-            console.log(settings[setting]);
             el.value = settings[setting];
         }
     });

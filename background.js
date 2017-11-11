@@ -36,8 +36,6 @@ const IMAGES = [
             disabledMode: "private_browsing"
         });
 
-        console.log(disabledMode);
-
         const path = theme === "dark" ? IMAGES[index] : ALTERNATE_IMAGES[index];
 
         browser.browserAction.setIcon({
@@ -53,7 +51,7 @@ const IMAGES = [
         });
     };
 
-browser.browserAction.onClicked.addListener(setState);
+browser.browserAction.onClicked.addListener(() => setState());
 
 browser.runtime.onStartup.addListener(() => {
     browser.privacy.websites.trackingProtectionMode.get({}).then(({ value: mode }) => {
